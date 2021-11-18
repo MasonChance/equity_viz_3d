@@ -8,7 +8,7 @@ As the project is still in early development, no liscencing has been attached an
 
 ## Project Layout and Documentation *(for devs)*
 
-Below you will find a categorical index of the documentation regarding design and implementation notes. Design docs are categorized with each feature having its own sub-directory containing a `<featureName>.md` file and relevant visual assests such as whiteboard, domain-model, wrrc, and Class or Relational Table models.
+Below you will find a categorical index of the documentation regarding design and implementation notes. Design docs are categorized with each feature having its own sub-directory containing a `<featureName>.md` file and relevant visual assests such as whiteboard, domain-model, wrrc, and Class or Relational Table models in `.png` format.
 
 ### Index
 
@@ -19,4 +19,3 @@ Below you will find a categorical index of the documentation regarding design an
 [Tests Approach and Implementation](tests/testing.md)
 
 [Packagess and Libraries Index](design_docs/pkg_lib.md)
-
