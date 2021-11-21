@@ -20,6 +20,8 @@ The MVP for this project is to include the following:
 
 All features and use-cases not stated here, regardless of their mention in the current user stories should be considered stretch goals for future and continued development; Only to be considered after the stated MVP is fully realized and achieved.
 
+- A Functional Download Client for Linux and Windows
+
 - The ability to enter a company name or ticker symbol and retrieve relevant fundamental and technical data.
 
 - The ability to retrieve and view Fundamental Data regarding a company. fundamental data is to be defined as the Financial statements (Income Statement, Cashflow Statement, Balance Sheet) and navigable links to earnings calls, annual reports, and SEC Filings.
