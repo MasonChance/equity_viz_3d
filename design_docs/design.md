@@ -12,6 +12,22 @@ A step by step protocol for adding User Stories and the related feature design d
 
 While this design documentation structure may seem un-neccesarily involved and compartmentalized, in light of the possibility that this will later become an open-source project it is the view of this projects author that it will aid in better workflow and understanding of the project as a whole; and facilitate an agile and incremental development process while maintaining the integrity of the project.
 
+## Minimum Viable Product (MVP)
+
+In consideration that this project is intended as a personal use tool without direct commercial impact or remuneration, and accounting for the complexity of all financial analysis; It is the opinion of the Author that the MVP of this project should be defined in light of its most basic utility in providing relevant financial information about a given securities investment opportunity.
+
+The MVP for this project is to include the following:
+
+All features and use-cases not stated here, regardless of their mention in the current user stories should be considered stretch goals for future and continued development; Only to be considered after the stated MVP is fully realized and achieved.
+
+- The ability to enter a company name or ticker symbol and retrieve relevant fundamental and technical data.
+
+- The ability to retrieve and view Fundamental Data regarding a company. fundamental data is to be defined as the Financial statements (Income Statement, Cashflow Statement, Balance Sheet) and navigable links to earnings calls, annual reports, and SEC Filings.
+
+- The ability to retrieve and view Technical data as related to the company's Market price and historical performance.
+
+- The ability to plot any of the provided data points in a 3 dimensional graph, where the 'Z' axis is Time, the 'X' axis an array of the points to plot, and the 'Y' axis the numeric value of those points over time.
+
 ## Index of User Stories
 
 [General Use and GUI](design_docs/user_stories/general_use_ui.md)
