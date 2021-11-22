@@ -1,6 +1,7 @@
 # Main Window, Application Interface
 
 [Back to README](../../../README.md)
+[Back to Design.md](../../design.md)
 
 The Main Window will act as the primary user interface with the application. The relevant User Stories related to the design of main_window are linked below. Upon closing of main_win, the application state should exit.
 
@@ -55,5 +56,7 @@ As the functionality of the Help/Info button will be expanded in the future as M
 
 *Clear Results Button:*
 This button should be positioned relative to the Search Button. The sole purpose of this button is to clear all results from the Fundamental and Technical Readouts and change its own state to: "unavailable" becoming "available only when the search button is clicked. NOTE: Independent Design document for this feature is not required!!! onClick clear data set self.state "inactive".
+
+**Wireframe:**
 
 ![Main Window Default State](main_win_wiref.png)

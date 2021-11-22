@@ -1,6 +1,6 @@
 # Design Docs, Overview and Use
 
-[Back to README](./README.md)
+[Back to README](../README.md)
 
 The purpose of this document is to future-proof this design process in anticipation of Open-Sourcing and the eventuality that the author of this project may have other pressing obligations during the life of the project.
 
@@ -32,20 +32,20 @@ All features and use-cases not stated here, regardless of their mention in the c
 
 ## Index of User Stories
 
-[General Use and GUI](./design_docs/user_stories/general_use_ui.md)
-[Tutorials and Tooltips](./design_docs/user_stories/tutorials_education.md)
-[3D Visualization and Views](./design_docs/user_stories/visualization_3d.md)
-[Conditional Analysis](./design_docs/user_stories/conditional_analysis.md)
-[Strategy Development and Testing](./design_docs/user_stories/strategy_dev_test.md)
-[Alerts and Push Notifications](./design_docs/user_stories/alerts_notifications.md)
-[Save Data](./design_docs/user_stories/saves.md)
-[Quick Analysis](./design_docs/user_stories/quick_analysis.md)
-[Estimate Taxes](./design_docs/user_stories/tax_estimate.md)
-[Memory and Storage Management](./design_docs/user_stories/memory_management.md)
+- [General Use and GUI](user_stories/general_use_ui.md)
+- [Tutorials and Tooltips](user_stories/tutorials_education.md)
+- [3D Visualization and Views](user_stories/visualization_3d.md)
+- [Conditional Analysis](user_stories/conditional_analysis.md)
+- [Strategy Development and Testing](user_stories/strategy_dev_test.md)
+- [Alerts and Push Notifications](user_stories/alerts_notifications.md)
+- [Save Data](user_stories/saves.md)
+- [Quick Analysis](user_stories/quick_analysis.md)
+- [Estimate Taxes](user_stories/tax_estimate.md)
+- [Memory and Storage Management](user_stories/memory_management.md)
 
 ## Index Of Feature Design Docs
 
-[Main Window](design_docs/feature_docs/main_window/main_win.md)
+- [Main Window](feature_docs/main_window/main_win.md)
 
 ### File Structure and Naming Conventions
 
@@ -75,9 +75,9 @@ Each feature should have its own sub-directory in the `design_docs/feature_docs/
     3 
     4 # Designing the Main Application Window
     5 
-    6 [Back to README](README.md)
-    7 [Back to design.md](design.md)
-    8 [User_Story General Use and UI](general_use_ui.md)
+    6 [Back to README](../../../README.md)
+    7 [Back to design.md](../../design.md)
+    8 [User_Story General Use and UI](../../user_stories/general_use_ui.md)
     9 
    10 The main window should default to width:300px and hieght: 400px....
    11 
