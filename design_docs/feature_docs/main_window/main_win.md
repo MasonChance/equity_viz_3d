@@ -5,11 +5,11 @@
 The Main Window will act as the primary user interface with the application. The relevant User Stories related to the design of main_window are linked below. Upon closing of main_win, the application state should exit.
 
 **User Stories:**
-[General Use and GUI](design_docs/user_stories/general_use_ui.md)
+[General Use and GUI](./design_docs/user_stories/general_use_ui.md)
 
 ## Required Packages and Resources
 
-For more details on a given resource, see [Packages And Libraries](design_docs/pkg_lib.md). The GUI interface will utilize the Tkinter Module of python and incorporate other GUI libraries and modules as necessary.
+For more details on a given resource, see [Packages And Libraries](./design_docs/pkg_lib.md). The GUI interface will utilize the Tkinter Module of python and incorporate other GUI libraries and modules as necessary.
 
 ### Overview of Design Approach
 

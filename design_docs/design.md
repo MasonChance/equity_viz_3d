@@ -32,20 +32,20 @@ All features and use-cases not stated here, regardless of their mention in the c
 
 ## Index of User Stories
 
-[General Use and GUI](design_docs/user_stories/general_use_ui.md)
-[Tutorials and Tooltips](design_docs/user_stories/tutorials_education.md)
-[3D Visualization and Views](design_docs/user_stories/visualization_3d.md)
-[Conditional Analysis](design_docs/user_stories/conditional_analysis.md)
-[Strategy Development and Testing](design_docs/user_stories/strategy_dev_test.md)
-[Alerts and Push Notifications](design_docs/user_stories/alerts_notifications.md)
-[Save Data](design_docs/user_stories/saves.md)
-[Quick Analysis](design_docs/user_stories/quick_analysis.md)
-[Estimate Taxes](design_docs/user_stories/tax_estimate.md)
-[Memory and Storage Management](design_docs/user_stories/memory_management.md)
+[General Use and GUI](./design_docs/user_stories/general_use_ui.md)
+[Tutorials and Tooltips](./design_docs/user_stories/tutorials_education.md)
+[3D Visualization and Views](./design_docs/user_stories/visualization_3d.md)
+[Conditional Analysis](./design_docs/user_stories/conditional_analysis.md)
+[Strategy Development and Testing](./design_docs/user_stories/strategy_dev_test.md)
+[Alerts and Push Notifications](./design_docs/user_stories/alerts_notifications.md)
+[Save Data](./design_docs/user_stories/saves.md)
+[Quick Analysis](./design_docs/user_stories/quick_analysis.md)
+[Estimate Taxes](./design_docs/user_stories/tax_estimate.md)
+[Memory and Storage Management](./design_docs/user_stories/memory_management.md)
 
 ## Index Of Feature Design Docs
 
-[Main Window](design_docs/feature_docs/main_window/main_win.md)
+[Main Window](./design_docs/feature_docs/main_window/main_win.md)
 
 ### File Structure and Naming Conventions
 
