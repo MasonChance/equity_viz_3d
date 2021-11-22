@@ -1,6 +1,6 @@
 # Design Docs, Overview and Use
 
-[Back to README](README.md)
+[Back to README](../README.md)
 
 The purpose of this document is to future-proof this design process in anticipation of Open-Sourcing and the eventuality that the author of this project may have other pressing obligations during the life of the project.
 
@@ -12,22 +12,40 @@ A step by step protocol for adding User Stories and the related feature design d
 
 While this design documentation structure may seem un-neccesarily involved and compartmentalized, in light of the possibility that this will later become an open-source project it is the view of this projects author that it will aid in better workflow and understanding of the project as a whole; and facilitate an agile and incremental development process while maintaining the integrity of the project.
 
+## Minimum Viable Product (MVP)
+
+In consideration that this project is intended as a personal use tool without direct commercial impact or remuneration, and accounting for the complexity of all financial analysis; It is the opinion of the Author that the MVP of this project should be defined in light of its most basic utility in providing relevant financial information about a given securities investment opportunity.
+
+The MVP for this project is to include the following:
+
+All features and use-cases not stated here, regardless of their mention in the current user stories should be considered stretch goals for future and continued development; Only to be considered after the stated MVP is fully realized and achieved.
+
+- A Functional Download Client for Linux and Windows
+
+- The ability to enter a company name or ticker symbol and retrieve relevant fundamental and technical data.
+
+- The ability to retrieve and view Fundamental Data regarding a company. fundamental data is to be defined as the Financial statements (Income Statement, Cashflow Statement, Balance Sheet) and navigable links to earnings calls, annual reports, and SEC Filings.
+
+- The ability to retrieve and view Technical data as related to the company's Market price and historical performance.
+
+- The ability to plot any of the provided data points in a 3 dimensional graph, where the 'Z' axis is Time, the 'X' axis an array of the points to plot, and the 'Y' axis the numeric value of those points over time.
+
 ## Index of User Stories
 
-[General Use and GUI](design_docs/user_stories/general_use_ui.md)
-[Tutorials and Tooltips](design_docs/user_stories/tutorials_education.md)
-[3D Visualization and Views](design_docs/user_stories/visualization_3d.md)
-[Conditional Analysis](design_docs/user_stories/conditional_analysis.md)
-[Strategy Development and Testing](design_docs/user_stories/strategy_dev_test.md)
-[Alerts and Push Notifications](design_docs/user_stories/alerts_notifications.md)
-[Save Data](design_docs/user_stories/saves.md)
-[Quick Analysis](design_docs/user_stories/quick_analysis.md)
-[Estimate Taxes](design_docs/user_stories/tax_estimate.md)
-[Memory and Storage Management](design_docs/user_stories/memory_management.md)
+- [General Use and GUI](user_stories/general_use_ui.md)
+- [Tutorials and Tooltips](user_stories/tutorials_education.md)
+- [3D Visualization and Views](user_stories/visualization_3d.md)
+- [Conditional Analysis](user_stories/conditional_analysis.md)
+- [Strategy Development and Testing](user_stories/strategy_dev_test.md)
+- [Alerts and Push Notifications](user_stories/alerts_notifications.md)
+- [Save Data](user_stories/saves.md)
+- [Quick Analysis](user_stories/quick_analysis.md)
+- [Estimate Taxes](user_stories/tax_estimate.md)
+- [Memory and Storage Management](user_stories/memory_management.md)
 
 ## Index Of Feature Design Docs
 
-[Main Window](design_docs/feature_docs/main_window/main_win.md)
+- [Main Window](feature_docs/main_window/main_win.md)
 
 ### File Structure and Naming Conventions
 
@@ -57,9 +75,9 @@ Each feature should have its own sub-directory in the `design_docs/feature_docs/
     3 
     4 # Designing the Main Application Window
     5 
-    6 [Back to README](README.md)
-    7 [Back to design.md](design.md)
-    8 [User_Story General Use and UI](general_use_ui.md)
+    6 [Back to README](../../../README.md)
+    7 [Back to design.md](../../design.md)
+    8 [User_Story General Use and UI](../../user_stories/general_use_ui.md)
     9 
    10 The main window should default to width:300px and hieght: 400px....
    11 
