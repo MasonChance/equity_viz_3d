@@ -1,15 +1,15 @@
 # Main Window, Application Interface
 
-[Back to README](README.md)
+[Back to README](../../../README.md)
 
 The Main Window will act as the primary user interface with the application. The relevant User Stories related to the design of main_window are linked below. Upon closing of main_win, the application state should exit.
 
 **User Stories:**
-[General Use and GUI](./design_docs/user_stories/general_use_ui.md)
+[General Use and GUI](../../user_stories/general_use_ui.md)
 
 ## Required Packages and Resources
 
-For more details on a given resource, see [Packages And Libraries](./design_docs/pkg_lib.md). The GUI interface will utilize the Tkinter Module of python and incorporate other GUI libraries and modules as necessary.
+For more details on a given resource, see [Packages And Libraries](../../pkg_lib.md). The GUI interface will utilize the Tkinter Module of python and incorporate other GUI libraries and modules as necessary.
 
 ### Overview of Design Approach
 
@@ -56,4 +56,4 @@ As the functionality of the Help/Info button will be expanded in the future as M
 *Clear Results Button:*
 This button should be positioned relative to the Search Button. The sole purpose of this button is to clear all results from the Fundamental and Technical Readouts and change its own state to: "unavailable" becoming "available only when the search button is clicked. NOTE: Independent Design document for this feature is not required!!! onClick clear data set self.state "inactive".
 
-![Main Window Default State](design_docs/feature_docs/main_window/main_win_wiref.png)
+![Main Window Default State](main_win_wiref.png)

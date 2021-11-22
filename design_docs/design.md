@@ -1,6 +1,6 @@
 # Design Docs, Overview and Use
 
-[Back to README](README.md)
+[Back to README](./README.md)
 
 The purpose of this document is to future-proof this design process in anticipation of Open-Sourcing and the eventuality that the author of this project may have other pressing obligations during the life of the project.
 
@@ -45,7 +45,7 @@ All features and use-cases not stated here, regardless of their mention in the c
 
 ## Index Of Feature Design Docs
 
-[Main Window](./design_docs/feature_docs/main_window/main_win.md)
+[Main Window](design_docs/feature_docs/main_window/main_win.md)
 
 ### File Structure and Naming Conventions
 
