@@ -33,7 +33,7 @@ Main interface should be sized in such a way that "full-screen" is optional and 
 *Search-Bar and Search Button:*
 These two elements should be adjacent to each other on the interface window. The field should be clearly demarcated from the background of the window and centered. The field and the button should both be clearly and explicitly labeled, and the button should also make use of an explicit search Icon.
 
-The functionality of the search button and what can be searched for should be outlined and addressed as it's own design/feature document. See `search_info/search.md` for list of what data should be retrieved and where it should be displayed upon activation of the search function.
+The functionality of the search button and what can be searched for should be outlined and addressed as it's own design/feature document. See `search_info/search.md` for list of what data should be retrieved and where it should be displayed upon activation of the search function. NOTE: onClick set "clear" button state to "active"
 
 *Config/Start button for 3D model:*
 This button should open a dialog window as a seperate entity from the main window, details on the design of this window and what elements are required for it should be addressed in a design document of its own. See `3d_model_config/3d_conf.md` for functionality and design parameters.
@@ -56,3 +56,4 @@ As the functionality of the Help/Info button will be expanded in the future as M
 *Clear Results Button:*
 This button should be positioned relative to the Search Button. The sole purpose of this button is to clear all results from the Fundamental and Technical Readouts and change its own state to: "unavailable" becoming "available only when the search button is clicked. NOTE: Independent Design document for this feature is not required!!! onClick clear data set self.state "inactive".
 
+![Main Window Default State](design_docs/feature_docs/main_window/main_win_wiref.png)
