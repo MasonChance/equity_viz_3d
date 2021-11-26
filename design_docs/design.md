@@ -46,6 +46,7 @@ All features and use-cases not stated here, regardless of their mention in the c
 ## Index Of Feature Design Docs
 
 - [Main Window](feature_docs/main_window/main_win.md)
+- [Tooltips](feature_docs/tooltip_info/tooltip.md)
 
 ### File Structure and Naming Conventions
 
