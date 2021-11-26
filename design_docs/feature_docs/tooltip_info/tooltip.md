@@ -5,6 +5,17 @@
 
 Main window should have a section dedicated to displaying information about any element of the the application or the application readout the cursor is hovered over.
 
+## User Stories
+
+- [Tutorials and Education](../../user_stories/tutorials_education.md)
+- [General Use and UI](../../user_stories/general_use_ui.md)
+
+## Required Packages and Resources
+
+For more details on a given resource, see [Packages And Libraries](../../pkg_lib.md). This feature should only require the python built-ins: JSON, and sys.
+
+### Overview of Design Approach
+
 There should be a default text welcoming the user and describing the general use and navigation of the application as well as where to find more detailed information as the application develops.
 
 Tooltips regarding the buttons and readout areas should pull their information from either a JSON file (to function much like a settings.JSON) or from a Python Dictionary. Keys or Properties should be descriptive of the button/section/readout, and where possible be limited to one word without the need for underscores.
@@ -28,7 +39,10 @@ Implementation of the tooltip feature will be heavily entwined with the implemen
 
 For Ease of Develpment and adding/removing tooltips, a tooltip class should be implemented as a private class with private methods related to the creation and deletion of tooltips from the JSON object. This should allow developers to run python interpreter in the command line within the relevant directory and update the tooltip.JSON with a function, rather than manually editing the file. If only the content of a tooltip needs editing, ie: external links, display text, etc. devs should edit this in the file directly to ensure consistency and precision. For useage docs See: [dev_utilities](../../../_utilities/_util.md)
 
-![tooltip_utility_class_model](tooltip_util_class.png)
+**Class Models and Whiteboards:**
 
-![tooltip_utility_whiteboard](tooltip_util_wb.png)
+![tooltip_utility_class_model](tooltip_class_model.png)
 
+![tooltip_utility_whiteboard](tooltip_wboard.png)
+
+NOTE: tooltip.JSON should be located at the root of the project. files defining the tooltip class and it's methods should be located in the private `_utilities` directory.
