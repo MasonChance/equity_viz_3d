@@ -47,8 +47,31 @@ This script should run on application start and query the API. For ease and spee
 This callback should return all results that exactly match the search. If no matches are found it should return the results that match in descending order based on number of consecutive characters matching. In such a case results should be prioritized by length of the search term; if search term is less or equal to 4 chars, prioritize matching based on ticker, else based on company name.
 
 *Result Callbacks:*
-Each result displayed should have a callback that queries the api for the data defined in [Data Request](../data_request/data_req.md) and supplying its associated ticker to the API Request object.
+Each result displayed should have a callback that queries the api for the data categorically defined below.
 
+#### Data Requests by Category
+
+Each search item should be in terms of quarterly over time extending for the life of the company with the exception  of: Balance Sheet, Cash-Flow Statement, and Income statement which should be for the current year. Future additions to the search feature may include an option for viewing specific items from these financial statements over a given time period. 
+
+| Fundamental Search Items | Technical Search Items | 
+| ------------ | ---------- | 
+| Balance Sheet |  |
+| Cash-Flow Statement |  |
+| Income Statement |  |
+| Price/Earnings (P/E) |  |
+| Debt/Equity (D/E) |  |
+| Return on Equity (ROI) |  |
+| Price/Free Cash Flow (P/FCF)|  |
+| Return on Investment (ROI) |  |
+| Gross Margin |  | 
+| Price to Earnings Growth (PEG) |  |
+| Operating Margin |  |
+| Price/Sales (P/S) |  |
+| Price to Book (P/B) |  |
+| Return on Assets (ROA) |  |
+| Long Term Debt/Equity (LTD/E) |  |
+| Payout Ratio (Div Yield) |  |
+|
 **DB Table Diagram:**
 ![Ticker:Name Table]()
 
