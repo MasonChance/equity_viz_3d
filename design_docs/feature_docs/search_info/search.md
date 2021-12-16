@@ -40,7 +40,7 @@ MVP will require only name and ticker pairs but in the interest of future proofi
 - primary exchange
 - type (common, preferred, etc)
 
-*Start-up Script:*
+*Start-up Script DB Schema:*
 This script should run on application start and query the API. For ease and speed the previous table should be dropped, a new table created based on a schema and populated as a result of the API query.
 
 *Search-Button Callback:*
@@ -53,29 +53,37 @@ Each result displayed should have a callback that queries the api for the data c
 
 Each search item should be in terms of quarterly over time extending for the life of the company with the exception  of: Balance Sheet, Cash-Flow Statement, and Income statement which should be for the current year. Future additions to the search feature may include an option for viewing specific items from these financial statements over a given time period. 
 
+The table below is for reference only, table items should appear in the application grouped and sorted acording to type, time (current first: descending).
+
+
+
 | Fundamental Search Items | Technical Search Items | 
 | ------------ | ---------- | 
-| Balance Sheet |  |
-| Cash-Flow Statement |  |
-| Income Statement |  |
-| Price/Earnings (P/E) |  |
-| Debt/Equity (D/E) |  |
-| Return on Equity (ROI) |  |
-| Price/Free Cash Flow (P/FCF)|  |
-| Return on Investment (ROI) |  |
-| Gross Margin |  | 
-| Price to Earnings Growth (PEG) |  |
-| Operating Margin |  |
-| Price/Sales (P/S) |  |
-| Price to Book (P/B) |  |
-| Return on Assets (ROA) |  |
+| Balance Sheet | Day High (high) |
+| Cash-Flow Statement | Day Low (low) |
+| Income Statement | Day Open (open) |
+| Price/Earnings (P/E) | Day Close (close) |
+| Debt/Equity (D/E) | 20 Day High/Low (H/L20) |
+| Return on Equity (ROI) | 50 Day High/Low (H/L50) |
+| Price/Free Cash Flow (P/FCF)| 52 Week High/Low (H/Lyr) |
+| Return on Investment (ROI) | 20 Day Simple Moving Average (SMA20) |
+| Gross Margin | 50 Day Simple Moving Average (SMA50) |
+| Price to Earnings Growth (PEG) | 200 Day Simple Moving Average (SMA200) |
+| Operating Margin | Beta |
+| Price/Sales (P/S) | Average Volume |
+| Price to Book (P/B) | Day Volume |
+| Return on Assets (ROA) | Shares Outstanding |
 | Long Term Debt/Equity (LTD/E) |  |
 | Payout Ratio (Div Yield) |  |
-|
-**DB Table Diagram:**
-![Ticker:Name Table]()
+| Earnings Before Interest Taxes Depreciation Amortization (EBITDA) |  |
 
-**Start-up Script WRRC:**
+
+
+
+**DB Table Diagram:**
+![Ticker:Name Table](ticker_company_table.png)
+
+**Start-up Script Schema WRRC:**
 ![Start-up Script]()
 
 **Search-Button Algo/Whiteboard:**
