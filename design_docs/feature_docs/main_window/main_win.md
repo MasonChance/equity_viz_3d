@@ -10,7 +10,9 @@ The Main Window will act as the primary user interface with the application. The
 
 ## Required Packages and Resources
 
-For more details on a given resource, see [Packages And Libraries](../../pkg_lib.md). The GUI interface will utilize the Tkinter Module of python and incorporate other GUI libraries and modules as necessary.
+For more details on a given resource, see [Packages And Libraries](../../pkg_lib.md).
+
+The GUI interface will utilize the `Tkinter` Module of python and incorporate other GUI libraries and modules as necessary for other features.
 
 ### Overview of Design Approach
 

@@ -47,6 +47,7 @@ All features and use-cases not stated here, regardless of their mention in the c
 
 - [Main Window](feature_docs/main_window/main_win.md)
 - [Tooltips](feature_docs/tooltip_info/tooltip.md)
+- [Search Field](feature_docs/search_info/search.md)
 
 ### File Structure and Naming Conventions
 

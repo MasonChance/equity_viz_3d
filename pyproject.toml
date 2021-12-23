@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "equity_3d"
+version = "0.1.0"
+description = "Desktop application for stocks/securities valuation analysis and visualization."
+authors = ["MasonChance <mason.fryberger@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^21.12b0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
