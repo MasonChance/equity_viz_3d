@@ -40,9 +40,6 @@ MVP will require only name and ticker pairs but in the interest of future proofi
 - primary exchange
 - type (common, preferred, etc)
 
-*Start-up Script DB Schema:*
-This script should run on application start and query the API. For ease and speed the previous table should be dropped, a new table created based on a schema and populated as a result of the API query.
-
 *Search-Button Callback:*
 This callback should return all results that exactly match the search. If no matches are found it should return the results that match in descending order based on number of consecutive characters matching. In such a case results should be prioritized by length of the search term; if search term is less or equal to 4 chars, prioritize matching based on ticker, else based on company name.
 
@@ -54,8 +51,6 @@ Each result displayed should have a callback that queries the api for the data c
 Each search item should be in terms of quarterly over time extending for the life of the company with the exception  of: Balance Sheet, Cash-Flow Statement, and Income statement which should be for the current year. Future additions to the search feature may include an option for viewing specific items from these financial statements over a given time period. 
 
 The table below is for reference only, table items should appear in the application grouped and sorted acording to type, time (current first: descending).
-
-
 
 | Fundamental Search Items | Technical Search Items | 
 | ------------ | ---------- | 
@@ -83,11 +78,8 @@ The table below is for reference only, table items should appear in the applicat
 **DB Table Diagram:**
 ![Ticker:Name Table](ticker_company_table.png)
 
-**Start-up Script Schema WRRC:**
-![Start-up Script]()
-
 **Search-Button Algo/Whiteboard:**
 ![Search-Button Whiteboard]()
 
 **Search Result Window Wireframe:**
-![Search Result Wireframe]()
+![Search Result Wireframe](search_res_wiref.png)
