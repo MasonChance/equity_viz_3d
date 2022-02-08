@@ -1,5 +1,5 @@
 from tkinter import *
-
+from elements.search import clear_search_default
 
 # Define and Configure main application window
 main_win = Tk()
@@ -21,18 +21,17 @@ nav_frame.grid(row=0, column=0, padx=5, pady=5)
 
 
 # <Search Field> Entry; placement and config
+
 search_field = Entry(nav_frame)
-# MVP setup will require user to delete the default text manually. future updates will add an event listener to automatically select the whole field and highlight it so that the default text is replaced when the user begins typing in the field
-
-search_field.insert(0, "Enter Ticker or Company to Search")
-
 search_field.configure(
     font=('Comic Sans', 12, 'italic'), 
-    fg='#dbdbdb'
+    fg='#dbdbdb',
+
 )
-
+search_default='Enter Ticker or Company to search'
+search_field.insert(ANCHOR, search_default)
 search_field.grid(row=0, column=0, padx=5, pady=10)
-
+search_field.bind('<Double-Button-1>', clear_search_default, add='+')
 # <Search Button>: placement, config. handler && callback imported from app.py
 search_btn = Button(nav_frame, width=10, text='Search')
 search_btn.grid(row=0, column=1, padx=5, pady=15, sticky=E)
