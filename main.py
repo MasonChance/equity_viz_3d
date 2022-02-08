@@ -1,5 +1,5 @@
 from tkinter import *
-from elements.search import clear_search_default
+from elements.search import clear_search_default, search_keyword
 
 # Define and Configure main application window
 main_win = Tk()
@@ -33,7 +33,7 @@ search_field.insert(ANCHOR, search_default)
 search_field.grid(row=0, column=0, padx=5, pady=10)
 search_field.bind('<Double-Button-1>', clear_search_default, add='+')
 # <Search Button>: placement, config. handler && callback imported from app.py
-search_btn = Button(nav_frame, width=10, text='Search')
+search_btn = Button(nav_frame, width=10, text='Search', command=lambda: search_keyword(search_field))
 search_btn.grid(row=0, column=1, padx=5, pady=15, sticky=E)
 
 # <Clear Button>: placement, config. handler && callback imported from app.py
