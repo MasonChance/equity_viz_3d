@@ -10,14 +10,11 @@ main_win.geometry('600x700')
 # Navbar and Search frame: configs and position
 nav_frame = Frame(main_win)
 nav_frame.configure(
-    width=590,
-    height=50
-    
+    width=580,
+    height=50,
 )
-
-
 nav_frame.grid_propagate(0)
-nav_frame.grid(row=0, column=0, padx=5, pady=5)
+nav_frame.grid(row=0, column=0, padx=5, pady=10)
 
 
 # <Search Field> Entry; placement and config
@@ -31,7 +28,7 @@ search_field.configure(
 search_default='Enter Ticker or Company to search'
 search_field.insert(ANCHOR, search_default)
 search_field.grid(row=0, column=0, padx=5, pady=10)
-search_field.bind('<Double-Button-1>', clear_search_default, add='+')
+search_field.bind('<Button-1>', clear_search_default, add='+')
 # <Search Button>: placement, config. handler && callback imported from app.py
 search_btn = Button(nav_frame, width=10, text='Search', command=lambda: search_keyword(search_field))
 search_btn.grid(row=0, column=1, padx=5, pady=15, sticky=E)
