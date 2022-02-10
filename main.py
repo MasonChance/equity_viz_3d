@@ -29,8 +29,10 @@ search_default='Enter Ticker or Company to search'
 search_field.insert(ANCHOR, search_default)
 search_field.grid(row=0, column=0, padx=5, pady=10)
 search_field.bind('<Button-1>', clear_search_default, add='+')
+
 # <Search Button>: placement, config. handler && callback imported from app.py
-search_btn = Button(nav_frame, width=10, text='Search', command=lambda: search_keyword(search_field))
+
+search_btn = Button(nav_frame, width=10, text='Search', command=lambda: search_keyword(nav_frame))
 search_btn.grid(row=0, column=1, padx=5, pady=15, sticky=E)
 
 # <Clear Button>: placement, config. handler && callback imported from app.py
