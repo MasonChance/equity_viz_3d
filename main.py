@@ -1,6 +1,6 @@
 from tkinter import *
 from elements.search import clear_search_default, search_keyword
-
+from tests.unit_tst import db_class_tests
 # Define and Configure main application window
 main_win = Tk()
 main_win.title('Equity 3D')
@@ -112,5 +112,5 @@ technic_readout.grid_propagate(0)
 technic_readout.grid(row=1, column=1, padx=5, pady=15, sticky=W)
 
 
-
-main_win.mainloop()
+if __name__ == "__main__":
+    main_win.mainloop()
