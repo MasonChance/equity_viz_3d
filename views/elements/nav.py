@@ -1,11 +1,13 @@
 '''Contains Class defining the navigation frame widget, its components and related callbacks/event bindings
 '''
 import tkinter as tk
-# from dotenv import load_dotenv
-# import requests
-# import json
-# import os
-# load_dotenv()
+from dotenv import load_dotenv
+import requests
+import json
+import os
+load_dotenv()
+
+from api_db_classes.query_cls import AlphaVQuery
 
 class Nav:
     def __init__(self, master=None):
@@ -15,11 +17,11 @@ class Nav:
             width = 590,
             height = 50,
         )
-        self.nav_frame.propagate(0)
+        # self.nav_frame.propagate(0)
         self.search_field()
         self.search_btn()
         self.clear_btn()
-        self._3d_conf()
+        self._3d_conf_btn()
 
 
     def search_field(self):
@@ -52,11 +54,62 @@ class Nav:
         search_btn.configure(
             width=10,
             text='Search',
+            command=self.search_keyword
         )
 
-        #TODO: button still needs callback command=lambda: search_keyword(<search_widget>) because the command requires creation of a new frame and listbox anchored to the search field widget, create a subclass of Nav called: SearchMatches. use an instance of this class to get and display the possible matches. 
-
         search_btn.grid(row=0, column=1, padx=5, pady=15, sticky="E")
+
+    
+    def search_keyword(self):
+        # define necessary variables for the api query including the query object
+        # url = os.environ.get('API_URL')
+        search_key = self.nav_frame.winfo_children()[0].get()
+        query = AlphaVQuery(search_key, 'SYMBOL_SEARCH')
+        
+        # assign the request to a variable
+        req = requests.get(query.url, params=str(query)).json()
+        # delete the search feild input
+        self.nav_frame.winfo_children()[0].delete(0, tk.END)
+
+        # call match_display
+        self.match_display()
+        # assign variable to the listbox to avoid excessive bracket access. 
+        matches = self.nav_frame.winfo_children()[-1].winfo_children()[0]
+        # loop through request and insert fstring in listbox for each element. 
+        print(f'response object: {req}')
+        for match in req["bestMatches"]:
+            result_fstr = f'{match["1. symbol"]}, {match["2. name"]}'
+            matches.insert(tk.END, result_fstr)
+
+        
+        matches.bind('<<ListboxSelect>>', self.selected_match)
+
+
+    def match_display(self):
+        match_frame = tk.Frame(self.nav_frame)
+        match_frame.configure(
+            width=self.nav_frame.winfo_children()[0].winfo_reqwidth(),
+            height=150,
+
+        )
+        match_frame.grid_propagate(0)
+        match_frame.grid(row=1, column=0, padx=5, pady=1)
+
+        match_list = tk.Listbox(match_frame)
+        match_list.configure(
+            width=match_frame.winfo_reqwidth(),
+            height=150,
+            font=('Comic Sans', 12)
+        )
+        match_list.grid(row=0, column=0)
+
+
+        
+
+    def selected_match(self):
+        # this method needs to [store the selection, delete the match_display widget, and make a series of api calls in a try except block. ]
+        pass
+
 
 
     def clear_btn(self):
@@ -71,7 +124,7 @@ class Nav:
         clear_btn.grid(row=0, column=2, padx=5, pady=15, sticky="E")
 
 
-    def _3d_conf(self):
+    def _3d_conf_btn(self):
         _3d_conf = tk.Button(self.nav_frame)
         _3d_conf.configure(
             width=10,
@@ -84,9 +137,4 @@ class Nav:
 
 
 
-# class SearchMatches(Nav):
-
-#     def __init__(self, master=None):
-#         self.master = master
-#         self.match_frame = tk.Frame(self.master)
-
+   
