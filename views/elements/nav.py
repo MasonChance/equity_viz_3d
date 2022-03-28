@@ -123,7 +123,7 @@ class Nav:
         
 
     def selected_match(self, e):
-        # this method needs to [store the selection, delete the match_display widget, reset the search_field.fg to defualt, and make a series of api calls in a try except block. ]
+        # needs to pass the "symbol" to the Readout Class Instance or its methods to render the available viewable information and attatch the correct Query object to the actionable buttons available for each item eg: chart, save, etc. 
         pass
 
 
