@@ -10,6 +10,11 @@ load_dotenv()
 from api_db_classes.query_cls import AlphaVQuery
 
 class Nav:
+    """Class defining the main navigation of the application window, including bindings
+    and callbacks for the buttons. All child widgets of the Nav instance, are rendered
+    and positioned via methods defined in the class and called in the __init__ function.
+    """
+    
     def __init__(self, master=None):
         self.master = master 
         self.nav_frame = tk.Frame(self.master)
@@ -26,6 +31,8 @@ class Nav:
 
 # ============ Search Field and related widgets and Callbacks ==========
     def search_field(self):
+        """Defines the Search Field as a Tkinter Entry widget, its configuration, positioning, and bindings. 
+        """
         search_field = tk.Entry(self.nav_frame)
         search_field.insert(0, "Enter Ticker or Company to Search")
 
@@ -40,7 +47,7 @@ class Nav:
 
     
     def clear_search_default(self, e):
-        """[clear the default text of the Entry widget and set cursor to index: 0 ]
+        """[A Callback function bound to the Search Field. Clears the default text of the Entry widget and sets cursor to index: 0 ]
         Args:
             event (<Button-1>): [tk.event pattern click left mouse button in search_field]
         """   
@@ -52,6 +59,8 @@ class Nav:
 
 
     def search_btn(self):
+        """Defines the Search Button as a Tkinter Button widget, its configuration, positioning, and bindings 
+        """
         search_btn = tk.Button(self.nav_frame)
         search_btn.configure(
             width=10,
@@ -63,6 +72,8 @@ class Nav:
 
     
     def search_keyword(self):
+        """A Callback function bound to the Search Button. Gets the Search Field contents and uses it to get possible matches from the AlphaVantage API. Invokes a function to create a match result display and renders the results to the user.
+        """
         # define necessary variables for the api query including the query object
         search_key = self.nav_frame.winfo_children()[0].get()
         query = AlphaVQuery(search_key, 'SYMBOL_SEARCH')
@@ -88,6 +99,8 @@ class Nav:
 
 
     def match_display(self):
+        """Defines a display for the Search Match results as a Tkinter Frame widget with a Tkinter Listbox; Defines configuration, and positioning.
+        """
         #TODO: add scrollbar to the frame.
         match_frame = tk.Frame(self.nav_frame)
         match_frame.configure(
