@@ -24,6 +24,7 @@ class Nav:
         self._3d_conf_btn()
 
 
+# ============ Search Field and related widgets and Callbacks ==========
     def search_field(self):
         search_field = tk.Entry(self.nav_frame)
         search_field.insert(0, "Enter Ticker or Company to Search")
@@ -35,7 +36,7 @@ class Nav:
 
         search_field.grid(row=0, column=0, padx=5, pady=10)
         search_field.bind('<Button-1>', self.clear_search_default, add='+')
-
+        
 
     
     def clear_search_default(self, e):
@@ -45,6 +46,7 @@ class Nav:
         """   
         curr_txt = e.widget.get()
         e.widget.delete(0, tk.END)
+        e.widget.config(fg='black')
         e.widget.icursor(0)
 
 
@@ -62,12 +64,12 @@ class Nav:
     
     def search_keyword(self):
         # define necessary variables for the api query including the query object
-        # url = os.environ.get('API_URL')
         search_key = self.nav_frame.winfo_children()[0].get()
         query = AlphaVQuery(search_key, 'SYMBOL_SEARCH')
         
         # assign the request to a variable
-        req = requests.get(query.url, params=str(query)).json()
+        req = requests.get(query.url, params=query.params).json()
+        
         # delete the search feild input
         self.nav_frame.winfo_children()[0].delete(0, tk.END)
 
@@ -76,7 +78,7 @@ class Nav:
         # assign variable to the listbox to avoid excessive bracket access. 
         matches = self.nav_frame.winfo_children()[-1].winfo_children()[0]
         # loop through request and insert fstring in listbox for each element. 
-        print(f'response object: {req}')
+        
         for match in req["bestMatches"]:
             result_fstr = f'{match["1. symbol"]}, {match["2. name"]}'
             matches.insert(tk.END, result_fstr)
@@ -86,14 +88,15 @@ class Nav:
 
 
     def match_display(self):
+        #TODO: add scrollbar to the frame.
         match_frame = tk.Frame(self.nav_frame)
         match_frame.configure(
-            width=self.nav_frame.winfo_children()[0].winfo_reqwidth(),
+            width=self.nav_frame.winfo_reqwidth(),
             height=150,
 
         )
         match_frame.grid_propagate(0)
-        match_frame.grid(row=1, column=0, padx=5, pady=1)
+        match_frame.grid(row=1, column=0,columnspan=4, padx=5, pady=1)
 
         match_list = tk.Listbox(match_frame)
         match_list.configure(
@@ -106,9 +109,20 @@ class Nav:
 
         
 
-    def selected_match(self):
-        # this method needs to [store the selection, delete the match_display widget, and make a series of api calls in a try except block. ]
+    def selected_match(self, e):
+        # this method needs to [store the selection, delete the match_display widget, reset the search_field.fg to defualt, and make a series of api calls in a try except block. ]
         pass
+
+
+
+
+
+
+
+
+
+
+
 
 
 

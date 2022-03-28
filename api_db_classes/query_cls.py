@@ -10,10 +10,12 @@ alpha_vantage_url = os.environ.get('API_URL')
 class AlphaVQuery:
     def __init__(self, keywords, function):
         self.url = alpha_vantage_url
-        self.keywords = str(keywords )
-        self.function = str(function)
-        self.apikey = os.environ.get('API_KEY')
-        self.datatype = 'json'
+        self.params = {
+            "keywords" : keywords,
+            "function" : function,
+            "apikey" : os.environ.get('API_KEY'),
+            "datatype" : 'json'
+        }
 
     def __str__(self):
         return f'query object used in request to AlphaVantage API'
