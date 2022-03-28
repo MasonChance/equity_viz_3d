@@ -37,5 +37,14 @@ class Readout:
             pass
 
     def add_rdout_item(self, item, master=None,):
+        #TODO: define and configure the readout line item widgets
         self.master = master
-        
+
+        # Create a frame widget to be added as a listbox item
+        # Create a text widget to identify the item (eg: Balance sheet)
+        # Create a button widget to "get" the info callback should bring up an option dialog box that allows a choice of "show as chart" or "show as table" as well as allowing the selection of any optional or additional parameters allowed by the api
+        # configure and place the text and button widgets inside the frame at columns 0 and 1 respectively
+
+
+    # TODO: define a callback for the "get" button in the rdout_item
+    # callback should open a dialog box that allows selection of parameters for the query and on "show" constructs and executes the API Query. rendering the results in a new application window. 
