@@ -2,7 +2,7 @@
 '''
 
 
-rdout = {
+RDOUT_SCHEMA = {
     "overview" : {
         "gui_name" : "Overview",
         

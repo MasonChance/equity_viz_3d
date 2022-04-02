@@ -7,7 +7,7 @@ import json
 import os
 load_dotenv()
 
-from ...app.rdout_schema import rdout
+from app.rdout_schema import RDOUT_SCHEMA as rc 
 # Each Line Item of the Readout should contain the folowing items
 #   Information title, eg: SMA, Income Statement, STOCH, RSI etc
 #   Time Series Interval, (if applicable) eg: 1min, daily, monthly etc
@@ -30,21 +30,46 @@ class Readout:
         )
 
         self.rdout.grid_propagate(0)
-        self.rdout.grid(row=2,column=0, columnspan=4, padx=5, pady=10)
+        
 
-        for item in rdout.keys():
+       
+        for idx, item in enumerate(rc):
             # call a function that creates a listbox item and adds it to the listbox, passing the item as an argument
-            pass
+            self.rdout_item(rc[f"{item}"], idx)
 
-    def add_rdout_item(self, item, master=None,):
-        #TODO: define and configure the readout line item widgets
-        self.master = master
 
+
+
+
+    def rdout_item(self, item, idx):
+       
         # Create a frame widget to be added as a listbox item
+        item_frame = tk.Frame(self.rdout)
+        item_frame.config(
+            width=300,
+            height=300,
+            padx=5,
+            pady=10,
+        )
+        item_frame.grid(row=idx, column=0)
         # Create a text widget to identify the item (eg: Balance sheet)
+        item_label = tk.Label(item_frame)
+        
+        item_txt = item["gui_name"]
+        item_label.config(
+            width=280,
+            text=item_txt,
+        )
+        item_label.grid(row=idx, column=0, sticky='W')
         # Create a button widget to "get" the info callback should bring up an option dialog box that allows a choice of "show as chart" or "show as table" as well as allowing the selection of any optional or additional parameters allowed by the api
-        # configure and place the text and button widgets inside the frame at columns 0 and 1 respectively
+        item_btn = tk.Button(item_frame)
+        item_btn.configure(
+            width=80,
+            text='Get'
+        )
+        item_btn.grid(row=idx, column=1, sticky='E')
+        
 
 
     # TODO: define a callback for the "get" button in the rdout_item
-    # callback should open a dialog box that allows selection of parameters for the query and on "show" constructs and executes the API Query. rendering the results in a new application window. 
+    # callback should open a dialog box that allows selection of parameters for the query and on "show" constructs and executes the API Query. rendering the results in a new application window.

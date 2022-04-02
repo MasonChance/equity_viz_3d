@@ -3,7 +3,7 @@
 import tkinter as tk 
 from .elements.nav import Nav 
 from .elements.info import Info
-
+from .elements.readout import Readout
 
 class Home:
 
@@ -19,6 +19,6 @@ class Home:
         info.info_frame.grid(row=1, column=0, pady=5)
         
         # call readout class instance
-        
-
+        rdout = Readout(self.master)
+        rdout.rdout.grid(row=3,column=0, pady=5)
 
