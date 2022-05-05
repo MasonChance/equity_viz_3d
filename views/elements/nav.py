@@ -7,7 +7,12 @@ import json
 import os
 load_dotenv()
 
-from api_db_classes.query_cls import AlphaVQuery
+from api_db_classes.query_cls import KeywordQuery
+from .readout import Readout
+
+
+# Global Variable to be used as Base Query object for GET-requests to the API. use the methods '_update_keyword' and '_update_function' to set the appropriate parameters for each sucessive API call.
+ALPHA_QUERY = KeywordQuery()
 
 class Nav:
     """Class defining the main navigation of the application window, including bindings
@@ -76,10 +81,11 @@ class Nav:
         """
         # define necessary variables for the api query including the query object
         search_key = self.nav_frame.winfo_children()[0].get()
-        query = AlphaVQuery(search_key, 'SYMBOL_SEARCH')
+        ALPHA_QUERY._update_keyword(search_key)
+        ALPHA_QUERY._update_function('SYMBOL_SEARCH')
         
         # assign the request to a variable
-        req = requests.get(query.url, params=query.params).json()
+        req = requests.get(ALPHA_QUERY.url, params=ALPHA_QUERY.params).json()
         
         # delete the search feild input
         self.nav_frame.winfo_children()[0].delete(0, tk.END)
@@ -123,20 +129,11 @@ class Nav:
         
 
     def selected_match(self, e):
-        # needs to pass the "symbol" to the Readout Class Instance or its methods to render the available viewable information and attatch the correct Query object to the actionable buttons available for each item eg: chart, save, etc. 
-        pass
-
-
-
-
-
-
-
-
-
-
-
-
+        # gets the selection and splits on "," assigns to the first element. This is based on the formatting contained in the 'search_keyword' method
+        symbol = e.widget.get(e.widget.curselection()[0]).split(',')[0]
+        # update the ALPHA_QUERY instance keyword with the symbol variable defined above
+        ALPHA_QUERY._update_keyword(symbol)
+        
 
 
     def clear_btn(self):

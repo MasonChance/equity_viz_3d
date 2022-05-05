@@ -31,14 +31,9 @@ class Readout:
 
         self.rdout.grid_propagate(0)
         
-
-       
         for idx, item in enumerate(rc):
-            # call a function that creates a listbox item and adds it to the listbox, passing the item as an argument
+            
             self.rdout_item(rc[f"{item}"], idx)
-
-
-
 
 
     def rdout_item(self, item, idx):
@@ -57,7 +52,7 @@ class Readout:
         
         item_txt = item["gui_name"]
         item_label.config(
-            width=280,
+            width=500,
             text=item_txt,
         )
         item_label.grid(row=idx, column=0, sticky='W')

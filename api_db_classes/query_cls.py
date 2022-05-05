@@ -7,11 +7,11 @@ load_dotenv()
 
 alpha_vantage_url = os.environ.get('API_URL')
 
-class AlphaVQuery:
-    def __init__(self, keywords, function):
+class KeywordQuery:
+    def __init__(self, keyword=None, function=None):
         self.url = alpha_vantage_url
         self.params = {
-            "keywords" : keywords,
+            "keywords" : keyword,
             "function" : function,
             "apikey" : os.environ.get('API_KEY'),
             "datatype" : 'json'
@@ -23,24 +23,27 @@ class AlphaVQuery:
     def __repr__(self):
         return f'{self.keys()}'
 
+    def _update_keyword(self, keyword):
+        self.params['keywords'] = keyword
 
-class FundamentalQuery:
-    def __init__(self):
-        self.income = 'INCOME_STATEMENT'
-        self.balance = 'BALANCE_SHEET'
-        self.cash = 'CASH_FLOW'
-        self.earnings = 'EARNINGS'
-        self.overview = 'OVERVIEW'
+    def _update_function(self, function):
+        self.params['function'] = function
+
+
+
+class DetailQuery(KeywordQuery):
+    def __init__(self, interval, time_period, series_type):
+        super().__init__(self, keywords, function)
+       
+        self.params['interval'] = interval
+        self.params['time_period'] = time_period
+        self.params['series_type'] = series_type
 
     def __str__(self):
-        return f'class defining the api endpoints required for company fundamental data'
+        return f'class defining the api call-parameters required for company serial data (ie: Simple Moving Average[SMA]) '
 
     def __repr__(self):
         return f'{self.keys()}'
 
     
 
-class TechnicalQuery:
-    def __init__(self):
-        pass
-    # TODO: these queries differ as they require additional parameters 
