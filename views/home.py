@@ -20,5 +20,6 @@ class Home:
         
         # call readout class instance
         rdout = Readout(self.master)
-        rdout.rdout.grid(row=3,column=0, pady=5)
+        rdout.rdout.grid(row=2, column=0, padx=5,pady=5)
+        
 

@@ -11,6 +11,7 @@ class KeywordQuery:
     def __init__(self, keyword=None, function=None):
         self.url = alpha_vantage_url
         self.params = {
+            # !!! keywords attribute must be identified in the plural per the API documentation.
             "keywords" : keyword,
             "function" : function,
             "apikey" : os.environ.get('API_KEY'),
