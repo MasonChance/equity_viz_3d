@@ -8,7 +8,9 @@ authors = ["MasonChance <mason.fryberger@gmail.com>"]
 python = "^3.8"
 pytest = "^6.2.5"
 httpie = "^2.6.0"
-python-dotenv = "^0.19.2"
+python-dotenv = "^0.21.0"
+
+
 
 [tool.poetry.dev-dependencies]
 black = {version = "^21.12b0", allow-prereleases = true}

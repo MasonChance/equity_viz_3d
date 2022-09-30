@@ -7,7 +7,7 @@ import json
 import os
 load_dotenv()
 
-from api_db_classes.query_cls import KeywordQuery
+from ...api_db_classes.query_cls import KeywordQuery
 from .readout import Readout
 
 
@@ -158,6 +158,7 @@ class Nav:
         #TODO: requires command functon to select and set the options and axis of the 3d rendered chart
 
         _3d_conf.grid(row=0, column=3, padx=5, pady=15, sticky="E")
+
 
 
 
