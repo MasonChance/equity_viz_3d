@@ -43,7 +43,9 @@ RDOUT_SCHEMA = [
     {
         "gui_name" : "Earnings Statements",
 
-        "req_params" : "EARNINGS",
+        "req_params" : {
+            "function" : "EARNINGS"
+        },
 
         "opt_params" : "None"
     }

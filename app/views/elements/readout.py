@@ -9,6 +9,8 @@ import sys
 load_dotenv()
 
 from ...schemas_templates.rdout_schema import RDOUT_SCHEMA
+from ...api_db_classes.query_cls import KeywordQuery, DetailQuery
+from .nav import ALPHA_QUERY
 
 # Each Line Item of the Readout should contain the folowing items
 #   Information title, eg: SMA, Income Statement, STOCH, RSI etc
@@ -60,12 +62,13 @@ class Line_Item:
         self.master = master
         self.item_frame = tk.Frame(self.master)
         
+        self.li_item = li_item
         self.row = row
+
         # self.item_frame.grid_propagate(0)
         self.item_frame.grid(row=row, column=0, pady=5)
         
 
-        self.li_item = li_item
         # Instantiate the Label widget to display the "gui_name" property of the 
         item = tk.Label(self.item_frame)
         item.config(
@@ -79,3 +82,14 @@ class Line_Item:
         item.grid(row=0, column=0,pady=2)
 
         # TODO: set up button Decide if button should bring up a sort of "query configuration" window and if so how should it gain access to the necessary information for the query. 
+
+        # Instantiate the Button widget to configure line item search query (this will require a search config window to be created in the elements sub-directory of <dir: views>)
+        config_results_btn = tk.Button(self.item_frame)
+        config_results_btn.config(
+            state='disabled',
+            text="Configure Results",
+
+        )
+
+    
+
