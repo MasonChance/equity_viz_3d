@@ -1,4 +1,5 @@
-'''Class definition for query object to be used with the AlphaVantage API
+'''This file contains the <class: Query> and sub-classes that govern additional parameters and options that may be required by the API's endpoints.
+
 '''
 from dotenv import load_dotenv
 import json
@@ -29,6 +30,8 @@ class KeywordQuery:
 
     def _update_function(self, function):
         self.params['function'] = function
+
+    
 
 
 

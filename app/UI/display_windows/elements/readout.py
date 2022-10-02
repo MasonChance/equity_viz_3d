@@ -8,8 +8,9 @@ import os
 import sys
 load_dotenv()
 
-from ...schemas_templates.rdout_schema import RDOUT_SCHEMA
-from ...api_db_classes.query_cls import KeywordQuery, DetailQuery
+# !!! Uncomment or Remove below line after re-working how line items are displayed and utilized.
+# from ...schemas_templates.rdout_schema import RDOUT_SCHEMA
+from ....api_dir.query_cls import KeywordQuery, DetailQuery
 from .nav import ALPHA_QUERY
 
 # Each Line Item of the Readout should contain the folowing items
@@ -40,8 +41,10 @@ class Readout:
 
         # self.rdout_lines = self.li_items()
         self.rdout_frame.grid_propagate(0)
-        self.render_li_items()
+        # self.render_li_items()
      
+    # TODO: this Fn: requires re-work after the re-structure plan
+    # each line item will be an individual call rather than rendered from a list to account for different types of layout and different commands needed for displaying the requested information. 
     def render_li_items(self):
         # iterates RDOUT_SCHEMA and adds a Line_Item instance to the Readout.rdout_frame for each key in RDOUT_SCHEMA
         for idx, data_set in enumerate(RDOUT_SCHEMA):

@@ -7,8 +7,8 @@ import json
 import os
 load_dotenv()
 
-from ...api_db_classes.query_cls import KeywordQuery
-from .readout import Readout
+from ....api_dir.query_cls import KeywordQuery
+
 
 
 # Global Variable to be used as Base Query object for GET-requests to the API. use the methods '_update_keyword' and '_update_function' to set the appropriate parameters for each sucessive API call.

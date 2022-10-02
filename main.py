@@ -3,7 +3,7 @@
 import sys
 import os 
 import tkinter as tk 
-from app.views.home import Home
+from app.UI.display_windows.home import Home
 
 main_win = tk.Tk()
 main_win.title('3D Viz')
